@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Main} from "./components/main.js";
+import {Form} from "./components/form.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    header: "Learn languages with professional tutors",
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi ullam earum aut voluptatum exercitationem magni officiis. Aspernatur, eius voluptates!",
+    mainBtn: "claim your free trial",
+    secondBtn: "try for free for 7 days"
+  }
+  
+
+  render(){
+    return (
+      <div className="app">
+        <div className="left">
+          <Main header={this.state.header} text={this.state.text}/>
+        </div>
+        <div className="right">
+          <Form mainBtn={this.state.mainBtn} secondBtn={this.state.secondBtn}/>
+        </div>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
